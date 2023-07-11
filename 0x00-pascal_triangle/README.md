@@ -2,4 +2,4 @@
 
 ## Description:bulb:
 
-This project intends to practice the use of lists in Python.
+A project to practice the use of lists in Python.
