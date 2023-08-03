@@ -15,7 +15,7 @@ def nqueens(n):
         print("N must be at least 4")
         exit(1)
 
-    board = [[0 for col in range(n)] for row in range(n)]
+    bd = [[0 for _ in range(n)] for _ in range(n)]
     solutions = []
 
     def is_safe(board, row, col):
@@ -58,6 +58,8 @@ def nqueens(n):
 
         res = False
 
+        # Consider this column and try placing this queen in all rows 
+        # one by one
         for i in range(n):
             if is_safe(board, i, col):
                 board[i][col] = 1
@@ -68,10 +70,10 @@ def nqueens(n):
 
         return res
 
-    solve(board, 0)
+    solve(bd, 0)
 
-    for solution in solutions:
-        print(solution)
+    for sol in solutions:
+        print(sol)
 
 
 if __name__ == "__main__":
@@ -80,9 +82,9 @@ if __name__ == "__main__":
         exit(1)
 
     try:
-        n = int(sys.argv[1])
+        num = int(sys.argv[1])
     except ValueError:
         print("N must be a number")
         exit(1)
 
-    nqueens(n)
+    nqueens(num)
